@@ -8,6 +8,10 @@ public class Person {
         this.id = id;
         this.name = name;
     }
+    public Person(){
+        this.name = null;
+        this.id = 0;
+    }
 
     public long getId() {
         return id;

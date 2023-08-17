@@ -1,14 +1,16 @@
 package rocks.zipcode.demo;
 
-public class Student implements Learner{
+public class Student extends Person implements Learner {
     private double totalStudyTime;
 
-    public Student(double totalStudyTime){
-        this.totalStudyTime = totalStudyTime;
-    }
+//    public Student(long id, String name) {
+//        super(id, name);
+//    }
+
     public double getTotalStudyTime() {
         return totalStudyTime;
     }
+
     @Override
     public void learn(double numberOfHours) {
         totalStudyTime += numberOfHours;
