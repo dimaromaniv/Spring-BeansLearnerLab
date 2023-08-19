@@ -16,6 +16,7 @@ public class Alumni {
 //    @Autowired
 //    @Qualifier("instructors")
     Instructors instructors;
+    double numberOfHoursToTeachEachStudents = 1200.00;
 
     //    @Bean
 //    @DependsOn("previousCohort")
@@ -38,6 +39,14 @@ public class Alumni {
 
         instructors.forEach(i -> i.lecture(students, numberOfHoursPerInstructor));
     }
+     public Double numberOfHoursPerInstructor () {
+         int numberOfInstructors = instructors.size();
+         int numberOfStudents = students.size();
+         double numberOfHoursToTeachEachStudent = 1200;
+         double numberOfHoursToTeach = numberOfHoursToTeachEachStudent * numberOfStudents;
+         double numberOfHoursPerInstructor = numberOfHoursToTeach / numberOfInstructors;
+         return numberOfHoursPerInstructor;
+     }
 
     public Students getStudents() {
         return students;
@@ -46,5 +55,10 @@ public class Alumni {
     public Instructors getInstructors() {
         return instructors;
     }
+
+    public double getNumberOfHoursToTeachEachStudents() {
+        return (numberOfHoursToTeachEachStudents * students.size()) /  instructors.size();
+    }
 }
+
 

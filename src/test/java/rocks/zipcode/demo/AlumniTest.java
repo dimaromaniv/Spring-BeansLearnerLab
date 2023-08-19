@@ -3,6 +3,7 @@ package rocks.zipcode.demo;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -20,15 +21,31 @@ import java.util.List;
 @RunWith(SpringRunner.class)
 public class AlumniTest {
 
+    @Autowired
+
+    Alumni alumni;
+
     @Test
     void executeBootcamp() {
+        Integer size = alumni.getStudents().size();
+        Student nameOfStudent = alumni.getStudents().findById(30L);
+        Double actual = nameOfStudent.getTotalStudyTime();
+        Double expected = 1200.0;
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
-    void getStudents() {
+    public void testHostLecturePerInstructor() {
+        double hoursPerInstructor = alumni.numberOfHoursPerInstructor();
+
+        double hoursPer = alumni.getNumberOfHoursToTeachEachStudents();
+        System.out.println(hoursPer);
+        Instructor instructor = alumni.getInstructors().findById(1L);
+        double actual = alumni.numberOfHoursPerInstructor() / alumni.getInstructors().size();
+        double expected = 400.0;
+        Assert.assertEquals(expected,actual,00.1);
+
     }
 
-    @Test
-    void getInstructors() {
-    }
+
 }

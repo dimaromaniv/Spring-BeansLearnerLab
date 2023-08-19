@@ -45,6 +45,7 @@ public class ClassroomConfigTest {
         Assert.assertEquals(actual,expected);
     }
 
+
     @Test
     public void testHostLecture() {
         //given
