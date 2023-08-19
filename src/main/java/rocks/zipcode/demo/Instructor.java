@@ -2,6 +2,7 @@ package rocks.zipcode.demo;
 
 public class Instructor extends Person implements Teacher {
     public Instructor(long id, String name) {
+
         super(id, name);
     }
 

@@ -1,17 +1,17 @@
 package rocks.zipcode.demo;
 
 public class Person {
-    private final long id;
+    private final Long id;
     private String name;
 
     public Person(long id,String name) {
         this.id = id;
         this.name = name;
     }
-    public Person(){
-        this.name = null;
-        this.id = 0;
-    }
+//    public Person(){
+//        this.name = null;
+//        this.id = 0L;
+//    }
 
     public long getId() {
         return id;

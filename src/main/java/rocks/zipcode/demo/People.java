@@ -1,7 +1,6 @@
 package rocks.zipcode.demo;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 
 public abstract class People<PersonType extends Person> implements Iterable<PersonType> {
@@ -21,9 +20,10 @@ public abstract class People<PersonType extends Person> implements Iterable<Pers
         personList.add(personType);
     }
 
-    public void remove(PersonType personType) {
+    public void remove(Long id) {
+        PersonType temp = findById(id);
         if (personList != null) {
-            personList.remove(personType);
+            personList.remove(temp);
         }
     }
 
@@ -49,6 +49,14 @@ public abstract class People<PersonType extends Person> implements Iterable<Pers
         }
         return null;
     }
+
+//    @Override
+//    public String toStringFor() {
+//        for (PersonType p : personList)
+//        System.out.println(p.getName().toString());
+//
+//        return null;
+//    }
 
     public List<PersonType> findAll() {
         return this.personList;

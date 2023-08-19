@@ -9,6 +9,6 @@ public class Instructors extends People<Instructor> {
     }
     @Override
     public Iterator<Instructor> iterator() {
-        return null;
+        return personList.iterator();
     }
 }

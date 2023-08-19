@@ -6,12 +6,13 @@ import java.util.function.Consumer;
 
 public class Students extends People<Student> {
 
+
     public Students(Student... student) {
         super(student);
     }
 
     @Override
     public Iterator<Student> iterator() {
-        return null;
+        return personList.iterator();
     }
 }
